@@ -1,0 +1,81 @@
+
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :company %>
+    <%= form.text_field :company, id: :job_company, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :deadline %>
+    <%= form.datetime_select :deadline, id: :job_deadline, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :job_description, class: "form-control", rows: 10 , cols: 5  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :job_type %>
+    <%= form.text_field :job_type, id: :job_job_type, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :salary_range %>
+    <%= form.text_field :salary_range, id: :job_salary_range, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :job_location, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :number_of_slot %>
+    <%= form.text_field :number_of_slot, id: :job_number_of_slot, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :work_level %>
+    <%= form.text_field :work_level, id: :job_work_level, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :contact %>
+    <%= form.text_field :contact, id: :job_contact, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :contract %>
+    <%= form.text_field :contract, id: :job_contract, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :job_address, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :telephone %>
+    <%= form.text_field :telephone, id: :job_telephone, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= form.label :created_at %>
+    <%= form.text_field :created_at, id: :job_created_at, class: "form-control"  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
